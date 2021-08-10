@@ -1,12 +1,15 @@
 package com.example.task.ui.models
 
 import android.os.Parcelable
+import androidx.paging.PagingData
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 data class BrandResponse(
-    @SerializedName("data") val products: List<Product>,
-    val brand: Brand
+    @SerializedName("data") val products:
+            List<Product>,
+            @SerializedName("brand") val brand: Brand
+
 )
 
 data class ProductDetailsResponse(
@@ -19,5 +22,13 @@ data class Brand(
     val name: String,
     val banner: String,
     val logo: String,
-    val description: String
+    val description: String,
+) : Parcelable
+
+@Parcelize
+data class Cursor(
+    val current: Int,
+    val previous: String,
+    val next: String,
+    val count: Int,
 ) : Parcelable

@@ -3,6 +3,7 @@ package com.example.task.ui.brand.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +11,7 @@ import com.example.task.ui.models.Product
 import com.example.task.databinding.ItemProductBinding
 
 class ProductsAdapter(private val productsListClicks: ProductsListClicks) :
-    ListAdapter<Product, ProductsAdapter.ProductViewHolder>(DiffCheck.Currency_DIFF_CALLBACK) {
+    PagingDataAdapter<Product, ProductsAdapter.ProductViewHolder>(DiffCheck.Currency_DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
 
@@ -25,9 +26,9 @@ class ProductsAdapter(private val productsListClicks: ProductsListClicks) :
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        holder.bindTo(getItem(position), productsListClicks)
+        getItem(position)?.let { holder.bindTo(it, productsListClicks) }
     }
-
+///////
     class ProductViewHolder(private val binding: ItemProductBinding) : RecyclerView.ViewHolder(
         binding.root
     ) {

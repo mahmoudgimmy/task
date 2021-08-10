@@ -12,7 +12,7 @@ data class Product(
     val price: Price,
     val thumbnail: String?,
     val images: List<Image>?,
-    val brand: Brand?
+    val brand: Brand?,
 ) : Parcelable
 
 @Parcelize

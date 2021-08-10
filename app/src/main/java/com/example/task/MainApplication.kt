@@ -29,7 +29,7 @@ class MainApplication : Application() {
                 .addInterceptor(
                     CalligraphyInterceptor(
                         CalligraphyConfig.Builder()
-                            .setDefaultFontPath("fonts/Cairo-Regular.ttf")
+                            .setDefaultFontPath("fonts/Text-Regular.ttf")
                             .setFontAttrId(R.attr.fontPath)
                             .build()
                     )

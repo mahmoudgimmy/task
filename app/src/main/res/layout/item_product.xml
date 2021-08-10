@@ -40,7 +40,7 @@
                 android:textSize="@dimen/_12ssp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/iv_product"
-                tools:text="عرdص خاص" />
+                tools:text="عرض خاص" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/ct_product"
